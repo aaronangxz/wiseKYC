@@ -27,13 +27,13 @@ export default function Login() {
       try {
         const formValue = formRef.current?.getFieldsValue?.(true) || {};
         await dispatch(login(formValue));
-
-        MessagePlugin.success('登录成功');
+        console.log(e);
+        MessagePlugin.success('Successfully Login');
 
         navigate('/dashboard/base');
       } catch (e) {
         console.log(e);
-        MessagePlugin.error('登录失败');
+        MessagePlugin.error('Failed to Login');
       }
     }
   };
@@ -53,15 +53,15 @@ export default function Login() {
       >
         {loginType === 'password' && (
           <>
-            <FormItem name='account' rules={[{ required: true, message: '账号必填', type: 'error' }]}>
-              <Input size='large' placeholder='请输入账号：admin' prefixIcon={<UserIcon />}></Input>
+            <FormItem name='account' rules={[{ required: true, message: 'Required', type: 'error' }]}>
+              <Input size='large' placeholder='Enter WiseNance Email Acconut' prefixIcon={<UserIcon />}></Input>
             </FormItem>
-            <FormItem name='password' rules={[{ required: true, message: '密码必填', type: 'error' }]}>
+            <FormItem name='password' rules={[{ required: true, message: 'Required', type: 'error' }]}>
               <Input
                 size='large'
                 type={showPsw ? 'text' : 'password'}
                 clearable
-                placeholder='请输入登录密码：admin'
+                placeholder='Enter Password'
                 prefixIcon={<LockOnIcon />}
                 suffixIcon={
                   showPsw ? (
@@ -73,8 +73,8 @@ export default function Login() {
               />
             </FormItem>
             <div className={classnames(Style.checkContainer, Style.rememberPwd)}>
-              <Checkbox>记住账号</Checkbox>
-              <span className={Style.checkContainerTip}>忘记账号？</span>
+              <Checkbox>Remember Me</Checkbox>
+              <span className={Style.checkContainerTip}>Forget Account?</span>
             </div>
           </>
         )}
@@ -83,9 +83,9 @@ export default function Login() {
         {loginType === 'qrcode' && (
           <>
             <div className={Style.tipContainer}>
-              <span className='tip'>请使用微信扫一扫登录</span>
+              <span className='tip'>Login with WiseTalk</span>
               <span className='refresh'>
-                刷新 <RefreshIcon />
+                Refresh <RefreshIcon />
               </span>
             </div>
             <QRCode value='' size={200} />
@@ -94,18 +94,18 @@ export default function Login() {
         {/* // 手机号登陆 */}
         {loginType === 'phone' && (
           <>
-            <FormItem name='phone' rules={[{ required: true, message: '手机号必填', type: 'error' }]}>
-              <Input maxlength={11} size='large' placeholder='请输入您的手机号' prefixIcon={<UserIcon />} />
+            <FormItem name='phone' rules={[{ required: true, message: 'Required', type: 'error' }]}>
+              <Input maxlength={11} size='large' placeholder='Enter your mobile number' prefixIcon={<UserIcon />} />
             </FormItem>
-            <FormItem name='verifyCode' rules={[{ required: true, message: '验证码必填', type: 'error' }]}>
-              <Input size='large' placeholder='请输入验证码' />
+            <FormItem name='verifyCode' rules={[{ required: true, message: 'Required', type: 'error' }]}>
+              <Input size='large' placeholder='Enter verification code' />
               <Button
                 variant='outline'
                 className={Style.verificationBtn}
                 disabled={countdown > 0}
                 onClick={setupCountdown}
               >
-                {countdown === 0 ? '发送验证码' : `${countdown}秒后可重发`}
+                {countdown === 0 ? 'Send Code' : `Resend ${countdown}s`}
               </Button>
             </FormItem>
           </>
@@ -113,24 +113,24 @@ export default function Login() {
         {loginType !== 'qrcode' && (
           <FormItem className={Style.btnContainer}>
             <Button block size='large' type='submit'>
-              登录
+              Login
             </Button>
           </FormItem>
         )}
         <div className={Style.switchContainer}>
           {loginType !== 'password' && (
             <span className='tip' onClick={() => switchType('password')}>
-              使用账号密码登录
+              Login with Email
             </span>
           )}
           {loginType !== 'qrcode' && (
             <span className='tip' onClick={() => switchType('qrcode')}>
-              使用微信扫码登录
+              Login with WiseTalk
             </span>
           )}
           {loginType !== 'phone' && (
             <span className='tip' onClick={() => switchType('phone')}>
-              使用手机号登录
+              Login with Mobile Number
             </span>
           )}
         </div>

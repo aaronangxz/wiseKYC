@@ -8,6 +8,7 @@ const result: IRouter[] = [
     meta: {
       title: 'Logout',
       Icon: LogoutIcon,
+      hidden:true
     },
     children: [
       {

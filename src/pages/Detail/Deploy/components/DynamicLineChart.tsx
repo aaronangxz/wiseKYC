@@ -11,7 +11,7 @@ const DynamicLineChart = () => {
   });
 
   useEffect(() => {
-    const timer = setInterval(() => setLineOptions(getLineOptions()), 3000);
+    const timer = setInterval(() => setLineOptions(getLineOptions()), 5000);
     return () => {
       clearInterval(timer);
     };
@@ -22,7 +22,7 @@ const DynamicLineChart = () => {
       option={dynamicLineChartOptions} // option：图表配置项
       notMerge={true}
       lazyUpdate={true}
-      style={{ height: 265 }}
+      style={{ height: 500 }}
     />
   );
 };

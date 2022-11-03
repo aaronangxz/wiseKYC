@@ -8,6 +8,7 @@ const result: IRouter[] = [
     meta: {
       title: 'Users',
       Icon: UserCircleIcon,
+      hidden:true,
     },
     children: [
       {
@@ -15,6 +16,7 @@ const result: IRouter[] = [
         Component: lazy(() => import('pages/User')),
         meta: {
           title: 'User Details',
+          hidden:true
         },
       },
     ],

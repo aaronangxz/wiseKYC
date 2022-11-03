@@ -4,11 +4,10 @@ import Board from 'components/Board';
 import { PANE_LIST } from '../constant';
 
 const MonthPurchase = () => (
-  <Card title='本月采购申请情况' header>
+  <Card title='Monthly Insights' headerBordered>
     <Row gutter={[16, 16]}>
       {PANE_LIST.map((item) => (
         <Col key={item.title} xs={6} xl={3} span={12}>
-         <b>{item.title}</b>
           <Board
             title={item.title}
             trend={item.trend}

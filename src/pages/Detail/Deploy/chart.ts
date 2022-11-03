@@ -34,7 +34,7 @@ export function getLineOptions(dateTime: any = []): EChartOption {
       type: 'value',
     },
     legend: {
-      data: ['本月', '上月'],
+      data: ['This Month', 'Last Month'],
       icon: 'circle',
       bottom: '0',
       itemGap: 48,
@@ -43,7 +43,7 @@ export function getLineOptions(dateTime: any = []): EChartOption {
     },
     series: [
       {
-        name: '上月',
+        name: 'Last Month',
         data: [
           getRandomInt(),
           getRandomInt(),
@@ -63,7 +63,7 @@ export function getLineOptions(dateTime: any = []): EChartOption {
         },
       },
       {
-        name: '本月',
+        name: 'This Month',
         data: [
           getRandomInt(),
           getRandomInt(),
@@ -108,7 +108,7 @@ export function getBarOptions(isMonth = false): EChartOption {
     xAxis: [
       {
         type: 'category',
-        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+        data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         axisTick: {
           alignWithLabel: true,
         },
@@ -129,7 +129,7 @@ export function getBarOptions(isMonth = false): EChartOption {
       },
     ],
     legend: {
-      data: ['去年', '今年'],
+      data: ['Last Year', 'This Year'],
       bottom: '0',
       icon: 'rect',
       itemGap: 48,
@@ -139,7 +139,7 @@ export function getBarOptions(isMonth = false): EChartOption {
     },
     series: [
       {
-        name: '去年',
+        name: 'Last Year',
         type: 'bar',
         barWidth: '30%',
         data: lastYearListCopy,
@@ -148,7 +148,7 @@ export function getBarOptions(isMonth = false): EChartOption {
         },
       },
       {
-        name: '今年',
+        name: 'This Year',
         type: 'bar',
         barWidth: '30%',
         data: thisYearListCopy,

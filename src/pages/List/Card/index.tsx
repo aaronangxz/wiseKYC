@@ -6,6 +6,17 @@ import { selectListCard, clearPageState, getList, switchPageLoading } from 'modu
 import ProductCard from './components/ProductCard';
 import { PageInfo } from 'tdesign-react/es/pagination/type';
 import Style from './index.module.less';
+import { IProduct } from 'services/product';
+
+export const daat:IProduct[] = [
+  {
+    name:"dd",
+    banner: "string",
+    description: "string",
+    index: 0,
+    isSetup: false,
+    type: 2,
+  },]
 
 const CardList = () => {
   const dispatch = useAppDispatch();
@@ -60,7 +71,7 @@ const CardList = () => {
         <>
           <div className={Style.cardList}>
             <Row gutter={[16, 12]}>
-              {pageState?.productList?.map((product, index) => (
+              {daat.map((product, index) => (
                 <Col key={index} span={6} lg={4}>
                   <ProductCard product={product} />
                 </Col>

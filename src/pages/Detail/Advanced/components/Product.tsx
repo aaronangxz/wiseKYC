@@ -4,13 +4,13 @@ import ProductCard from './ProductCard';
 import Style from '../index.module.less';
 
 const Product = () => (
-  <Card title='产品目录' className={Style.cardBox} header>
+  <Card title='Verification Items' className={Style.cardBox} headerBordered>
     <div>
       <Row gutter={[16, 16]}>
         <Col xs={12} xl={4}>
           <ProductCard
             title='Credit Risk Verification'
-            tags={['Risk Scoring', 'Pattern Detection', 'Cross Comparison']}
+            tags={['Risk Scoring', 'Pattern Detection']}
             desc='No Credit Risk Found'
             percent='100%'
             Icon='creditcard'
@@ -31,7 +31,7 @@ const Product = () => (
         </Col>
         <Col xs={12} xl={4}>
           <ProductCard
-            title='Flagged'
+            title='Abnormality Flagged'
             tags={['Manual Verification']}
             desc='Suspicious pattern found. Manual verification required.'
             percent='80%'

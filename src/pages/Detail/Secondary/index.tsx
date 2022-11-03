@@ -97,13 +97,13 @@ export default memo(() => {
     <div>
       <section className={Style.secondaryNotification}>
         <Tabs placement='top' size='medium' defaultValue='1'>
-          <TabPanel value='1' label='全部通知'>
+          <TabPanel value='1' label='All'>
             <MsgList list={list} onDelete={deleteItem} onUpdate={updateStatus} />
           </TabPanel>
-          <TabPanel value='2' label='未读通知'>
+          <TabPanel value='2' label='Unread'>
             <MsgList list={list.filter((item) => item.status === 1)} onDelete={deleteItem} onUpdate={updateStatus} />
           </TabPanel>
-          <TabPanel value='3' label='已读通知'>
+          <TabPanel value='3' label='Read'>
             <MsgList list={list.filter((item) => item.status === 2)} onDelete={deleteItem} onUpdate={updateStatus} />
           </TabPanel>
         </Tabs>

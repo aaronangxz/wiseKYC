@@ -8,7 +8,120 @@ import { StatusMap, ContractTypeMap, PaymentTypeMap } from '../Base';
 import './index.module.less';
 import classnames from 'classnames';
 import CommonStyle from '../../../styles/common.module.less';
+import { IContract } from 'services/contract';
 
+export const daat:IContract[] = [
+  {
+    index: 1,
+    name: "Trading",
+    status: 1,
+    no: "BH00010",
+    contractType: 1,
+    paymentType: 1 ,
+    amount: "ni.hao@wisenance.com",
+    updateTime: "string",
+    adminName: 's',
+  },
+  {
+    index: 2,
+    name: "Trading",
+    status: 0,
+    no: "BH00009",
+    contractType: 0,
+    paymentType: 0 ,
+    amount: "rina@wisenance.com",
+    updateTime: "string",
+    adminName: 's',
+  },
+  {
+    index: 3,
+    name: "Spot",
+    status: 2,
+    no: "BH00008",
+    contractType: 2,
+    paymentType: 0 ,
+    amount: "hey@wisenance.com",
+    updateTime: "string",
+    adminName: 's',
+  },
+  {
+    index: 4,
+    name: "Custody",
+    status: 3,
+    no: "BH00007",
+    contractType: 1,
+    paymentType: 1 ,
+    amount: "yo@wisenance.com",
+    updateTime: "string",
+    adminName: 's',
+  },
+  {
+    index: 5,
+    name: "Derivatives",
+    status: 4,
+    no: "BH00006",
+    contractType: 2,
+    paymentType: 1 ,
+    amount: "erm@wisenance.com",
+    updateTime: "string",
+    adminName: 's',
+  },
+  {
+    index: 6,
+    name: "Trading",
+    status: 4,
+    no: "BH00005",
+    contractType: 2,
+    paymentType: 1 ,
+    amount: "huh@wisenance.com",
+    updateTime: "string",
+    adminName: 's',
+  },
+  {
+    index: 7,
+    name: "Custody",
+    status: 5,
+    no: "BH00004",
+    contractType: 0,
+    paymentType: 0 ,
+    amount: "sadge@wisenance.com",
+    updateTime: "string",
+    adminName: 's',
+  },
+  {
+    index: 8,
+    name: "Spot",
+    status: 4,
+    no: "BH00003",
+    contractType: 2,
+    paymentType: 1 ,
+    amount: "lmao@wisenance.com",
+    updateTime: "string",
+    adminName: 's',
+  },
+  {
+    index: 9,
+    name: "Spot",
+    status: 4,
+    no: "BH00002",
+    contractType: 2,
+    paymentType: 1 ,
+    amount: "lul@wisenance.com",
+    updateTime: "string",
+    adminName: 's',
+  },
+  {
+    index: 10,
+    name: "Derivatives",
+    status: 2,
+    no: "BH00001",
+    contractType: 2,
+    paymentType: 1 ,
+    amount: "wise@wisenance.com",
+    updateTime: "string",
+    adminName: 's',
+  },]
+  
 export const SelectTable = () => {
   const dispatch = useAppDispatch();
   const pageState = useAppSelector(selectListSelect);
@@ -45,6 +158,7 @@ export const SelectTable = () => {
     setVisible(false);
   }
 
+  
   return (
     <>
       <Row justify='start' style={{ marginBottom: '20px' }}>
@@ -57,17 +171,17 @@ export const SelectTable = () => {
       </Row>
       <Table
         loading={loading}
-        data={contractList}
+        data={daat}
         columns={[
           {
-            title: '合同名称',
+            title: 'Type',
             fixed: 'left',
             align: 'left',
             ellipsis: true,
             colKey: 'name',
           },
           {
-            title: '合同状态',
+            title: 'Status',
             colKey: 'status',
             width: 200,
             cell({ row }) {
@@ -75,13 +189,13 @@ export const SelectTable = () => {
             },
           },
           {
-            title: '合同编号',
+            title: 'Customer ID',
             width: 200,
             ellipsis: true,
             colKey: 'no',
           },
           {
-            title: '合同类型',
+            title: 'Risk Level',
             width: 200,
             ellipsis: true,
             colKey: 'contractType',
@@ -90,7 +204,7 @@ export const SelectTable = () => {
             },
           },
           {
-            title: '合同收付类型',
+            title: 'Documents',
             width: 200,
             ellipsis: true,
             colKey: 'paymentType',
@@ -99,7 +213,7 @@ export const SelectTable = () => {
             },
           },
           {
-            title: '合同金额 (元)',
+            title: 'Assigned Analyst',
             width: 200,
             ellipsis: true,
             colKey: 'amount',
@@ -109,7 +223,7 @@ export const SelectTable = () => {
             fixed: 'right',
             width: 200,
             colKey: 'op',
-            title: '操作',
+            title: 'Action',
             cell(record) {
               return (
                 <>
@@ -120,7 +234,7 @@ export const SelectTable = () => {
                       rehandleClickOp(record);
                     }}
                   >
-                    管理
+                    Manage
                   </Button>
                   <Button
                     theme='primary'
@@ -129,7 +243,7 @@ export const SelectTable = () => {
                       handleClickDelete(record);
                     }}
                   >
-                    删除
+                    Flag
                   </Button>
                 </>
               );
@@ -163,8 +277,8 @@ export const SelectTable = () => {
           },
         }}
       />
-      <Dialog header='确认删除当前所选合同？' visible={visible} onClose={handleClose}>
-        <p>删除后的所有合同信息将被清空,且无法恢复</p>
+      <Dialog header='Do you want to flag this application?' visible={visible} onClose={handleClose}>
+        <p>Flagged application will require manual verifications.</p>
       </Dialog>
     </>
   );

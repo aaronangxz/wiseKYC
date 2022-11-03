@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Col, Row } from 'tdesign-react';
+import { Col, Row, Card } from 'tdesign-react';
 import { UsergroupIcon, FileIcon } from 'tdesign-icons-react';
 import ReactEcharts from 'echarts-for-react';
 import Board, { ETrend, IBoardProps } from 'components/Board';
@@ -74,9 +74,7 @@ const PANE_LIST: Array<IBoardProps> = [
 const TopPanel = () => (
   <Row gutter={[16, 16]}>
     {PANE_LIST.map((item, index) => (
-      
-      <Col key={item.title} xs={6} xl={3}>
-        {item.title}
+      <Col key={item.title} xs={6} xl={3}  >
         <Board
           title={item.title}
           trend={item.trend}

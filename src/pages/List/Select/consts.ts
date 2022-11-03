@@ -13,11 +13,11 @@ export const CONTRACT_STATUS = {
 };
 
 export const CONTRACT_STATUS_OPTIONS: Array<IOption> = [
-  { value: CONTRACT_STATUS.FAIL, label: '审核失败' },
-  { value: CONTRACT_STATUS.AUDIT_PENDING, label: '待审核' },
-  { value: CONTRACT_STATUS.EXEC_PENDING, label: '待履行' },
-  { value: CONTRACT_STATUS.EXECUTING, label: '审核成功' },
-  { value: CONTRACT_STATUS.FINISH, label: '已完成' },
+  { value: CONTRACT_STATUS.FAIL, label: 'Flagged' },
+  { value: CONTRACT_STATUS.AUDIT_PENDING, label: 'Pending Verification' },
+  { value: CONTRACT_STATUS.EXEC_PENDING, label: 'Pending KYC' },
+  { value: CONTRACT_STATUS.EXECUTING, label: 'KYC In Progress' },
+  { value: CONTRACT_STATUS.FINISH, label: 'Verified' },
 ];
 
 // 合同类型枚举
@@ -28,7 +28,7 @@ export const CONTRACT_TYPES = {
 };
 
 export const CONTRACT_TYPE_OPTIONS: Array<IOption> = [
-  { value: CONTRACT_TYPES.MAIN, label: '主合同' },
-  { value: CONTRACT_TYPES.SUB, label: '子合同' },
-  { value: CONTRACT_TYPES.SUPPLEMENT, label: '补充合同' },
+  { value: CONTRACT_TYPES.MAIN, label: 'Low' },
+  { value: CONTRACT_TYPES.SUB, label: 'Medium' },
+  { value: CONTRACT_TYPES.SUPPLEMENT, label: 'High' },
 ];

@@ -18,8 +18,11 @@ export default memo((props: IProps) => {
   return (
     
     <div className={Style.menuLogo} onClick={handleClick}>
+      <div className={Style.text} onClick={handleClick}>
+     {props.collapsed ? "": <h3>WiseKYC</h3> }
+   </div>
       {props.collapsed ? <img src="https://img.icons8.com/avantgarde/50/000000/approve.png"/> : <img src="https://img.icons8.com/avantgarde/50/000000/approve.png"/> }
-      <h3>WiseKYC</h3>
     </div>
+     
   );
 });

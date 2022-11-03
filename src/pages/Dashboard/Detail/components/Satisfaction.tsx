@@ -21,16 +21,15 @@ const Satisfaction = () => {
   return (
     <div className={Style.satisfactionPanel}>
       <Card
-        title='采购商品满意度分布'
-        header
+        title='Day On Day Comparison'
+        headerBordered
         actions={
           <div className={Style.operation}>
             {LastWeekDatePicker(onTimeChange)}
-            <Button className={Style.exportBtn}>导出数据</Button>
+            <Button className={Style.exportBtn}>Export</Button>
           </div>
         }
       >
-        <b>Day On Day Comparison</b>
         <ReactEcharts
           option={dynamicChartOption} // option：图表配置项
           notMerge={true}

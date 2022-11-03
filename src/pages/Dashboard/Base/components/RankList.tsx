@@ -8,8 +8,8 @@ import Style from './RankList.module.less';
 
 const DateRadioGroup = (
   <Radio.Group defaultValue='recent_week'>
-    <Radio.Button value='recent_week'>本周</Radio.Button>
-    <Radio.Button value='recent_month'>近三个月</Radio.Button>
+    <Radio.Button value='recent_week'>This Week</Radio.Button>
+    <Radio.Button value='recent_month'>Past 3 Months</Radio.Button>
   </Radio.Group>
 );
 
@@ -118,14 +118,12 @@ const PURCHASE_COLUMNS: TdPrimaryTableProps['columns'] = [
 const RankList = () => (
   <Row gutter={[16, 16]} className={Style.rankListPanel}>
     <Col xs={12} xl={6} span={12}>
-      <Card title='销售订单排名' actions={DateRadioGroup} header>
-        <b>Rank By Country</b>
+      <Card title='Highest Risk' subtitle = 'By country' actions={DateRadioGroup} headerBordered>
         <Table columns={SALE_COLUMNS} rowKey='productName' size='medium' data={SALE_TREND_LIST} />
       </Card>
     </Col>
     <Col xs={12} xl={6} span={12}>
-      <Card title='采购订单排名' actions={DateRadioGroup} header>
-      <b>Rank By Flagged Type</b>
+      <Card title='Most Common Risk' actions={DateRadioGroup} headerBordered>
         <Table columns={PURCHASE_COLUMNS} rowKey='productName' size='medium' data={PURCHASE_TREND_LIST} />
       </Card>
     </Col>

@@ -19,7 +19,7 @@ const TopChart = () => {
   return (
     <Row gutter={16} className={Style.panel}>
       <Col span={6}>
-        <Card title='部署趋势' header>
+        <Card title='KYC Trend' headerBordered>
           <div className={Style.deployPanelLeft}>
             <DynamicLineChart />
           </div>
@@ -27,12 +27,12 @@ const TopChart = () => {
       </Col>
       <Col span={6}>
         <Card
-          title='告警情况'
-          header
+          title='Alert'
+          headerBordered
           actions={
             <Radio.Group defaultValue='week' onChange={(val) => tabChange(val === 'month')}>
-              <Radio.Button value='week'>本周</Radio.Button>
-              <Radio.Button value='month'>本月</Radio.Button>
+              <Radio.Button value='week'>This Week</Radio.Button>
+              <Radio.Button value='month'>This Month</Radio.Button>
             </Radio.Group>
           }
         >
@@ -40,7 +40,7 @@ const TopChart = () => {
             option={dynamicBarChartOptions} // option：图表配置项
             notMerge={true}
             lazyUpdate={true}
-            style={{ height: 265 }}
+            style={{ height: 500 }}
           />
         </Card>
       </Col>

@@ -6,19 +6,20 @@ import { useAppDispatch, useAppSelector } from 'modules/store';
 import { selectListBase, getList, clearPageState } from 'modules/list/base';
 import CommonStyle from 'styles/common.module.less';
 import style from './index.module.less';
+import { IContract } from 'services/contract';
 
 export const PaymentTypeMap: {
   [key: number]: React.ReactElement;
 } = {
   0: (
     <>
-      付款
+    Incomplete
       <ChevronUpCircleIcon style={{ color: 'red', marginLeft: 4 }} />
     </>
   ),
   1: (
     <>
-      收款
+      Completed
       <ChevronDownCircleIcon style={{ color: 'green', marginLeft: 4 }} />
     </>
   ),
@@ -29,27 +30,27 @@ export const StatusMap: {
 } = {
   1: (
     <Tag theme='warning' variant='light'>
-      待审核
+      Pending Verification
     </Tag>
   ),
   2: (
     <Tag theme='warning' variant='light'>
-      待履行
+      Pending KYC
     </Tag>
   ),
   3: (
     <Tag theme='success' variant='light'>
-      履行中
+      KYC In Progress
     </Tag>
   ),
   4: (
     <Tag theme='success' variant='light'>
-      已完成
+      Verified
     </Tag>
   ),
   5: (
     <Tag theme='danger' variant='light'>
-      审核失败
+      Flagged
     </Tag>
   ),
 };
@@ -57,10 +58,23 @@ export const StatusMap: {
 export const ContractTypeMap: {
   [key: number]: string;
 } = {
-  0: '审核失败',
-  1: '待审核',
-  2: '待履行',
+  0: 'High',
+  1: 'Medium',
+  2: 'Low',
 };
+
+export const daat:IContract[] = [
+  {
+    adminName: 's',
+  amount: "string",
+  contractType: 1,
+  index: 1,
+  name: "string",
+  no: "string",
+  paymentType: 1 ,
+  status: 1,
+  updateTime: "string",
+  },]
 
 export default memo(() => {
   const dispatch = useAppDispatch();
@@ -91,7 +105,7 @@ export default memo(() => {
         <Col>
           <Row gutter={8} align='middle'>
             <Col>
-              <Button>新建合同</Button>
+              <Button>New Case</Button>
             </Col>
             <Col>
               <Button theme='default'>导出合同</Button>
@@ -119,14 +133,14 @@ export default memo(() => {
             width: 200,
             ellipsis: true,
             colKey: 'name',
-            title: '合同名称',
+            title: 'Type',
           },
           {
             align: 'left',
             width: 200,
             ellipsis: true,
             colKey: 'status',
-            title: '合同状态',
+            title: 'Status',
             cell({ row }) {
               return StatusMap[row.status || 5];
             },
@@ -186,7 +200,7 @@ export default memo(() => {
           },
         ]}
         loading={loading}
-        data={contractList}
+        data={daat}
         rowKey='index'
         selectedRowKeys={selectedRowKeys}
         verticalAlign='top'

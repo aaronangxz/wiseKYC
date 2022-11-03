@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const ProductCard = (props: IProps) => (
-  <div className={Styles.productCard}>
+  <div className={Styles.productCard} >
     {props.isAdd ? (
       <div className={Styles.productionAdd}>
         <div className={Styles.productionAddBtn}>

@@ -11,16 +11,9 @@ const result: IRouter[] = [
     },
     children: [
       {
-        path: 'base',
-        Component: lazy(() => import('pages/Detail/Base')),
-        meta: {
-          title: 'Basic Information',
-        },
-      },
-      {
         path: 'advanced',
         Component: lazy(() => import('pages/Detail/Advanced')),
-        meta: { title: 'Detailed Information' },
+        meta: { title: 'Details' },
       },
       {
         path: 'deploy',

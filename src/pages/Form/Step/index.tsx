@@ -13,22 +13,22 @@ interface IStep {
 
 const steps: IStep[] = [
   {
-    title: '申请提交',
+    title: 'Submit Dispute',
     content: '申请提交已于12月21日提交',
     component: StepOne,
   },
   {
-    title: '电子发票',
+    title: 'Verification',
     content: '预计1～3个工作日',
     component: StepTwo,
   },
   {
-    title: '发票已邮寄',
+    title: 'Authorization',
     content: '电子发票开出后7个工作日内联系',
     component: StepThree,
   },
   {
-    title: '完成',
+    title: 'Complete',
     content: '',
     component: StepFour,
   },

@@ -41,19 +41,9 @@ export default memo(() => {
 
   return (
     <Space align='center'>
-      <Badge className={Style.badge} count={6} dot={false} maxCount={99} shape='circle' showZero={false} size='medium'>
+      <Badge className={Style.badge} count={69} dot={false} maxCount={99} shape='circle' showZero={false} size='small'>
         <Button className={Style.menuIcon} shape='square' size='large' variant='text' icon={<MailIcon />} />
       </Badge>
-      <Popup content='Git' placement='bottom' showArrow destroyOnClose>
-        <Button
-          className={Style.menuIcon}
-          shape='square'
-          size='large'
-          variant='text'
-          onClick={gotoGitHub}
-          icon={<LogoGithubIcon />}
-        />
-      </Popup>
       <Popup content='Help' placement='bottom' showArrow destroyOnClose>
         <Button
           className={Style.menuIcon}

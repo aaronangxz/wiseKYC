@@ -52,7 +52,7 @@ export const TrendIcon = ({ trend, trendNum }: { trend?: ETrend; trendNum?: stri
 const Board = ({ title, count, desc, trend, trendNum, Icon, dark, border }: IBoardProps) => (
   <Card
     title={<div className={Style.boardTitle}>{title}</div>}
-    header
+    headerBordered
     className={classnames({
       [Style.boardPanelDark]: dark,
     })}

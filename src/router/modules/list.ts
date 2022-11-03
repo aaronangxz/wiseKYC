@@ -11,28 +11,9 @@ const result: IRouter[] = [
     },
     children: [
       {
-        path: 'base',
-        Component: lazy(() => import('pages/List/Base')),
-        meta: {
-          title: 'Overview',
-        },
-      },
-      {
-        path: 'card',
-        Component: lazy(() => import('pages/List/Card')),
-        meta: {
-          title: '卡片列表页',
-        },
-      },
-      {
-        path: 'select',
-        Component: lazy(() => import('pages/List/Select')),
-        meta: { title: '筛选列表页' },
-      },
-      {
         path: 'tree',
         Component: lazy(() => import('pages/List/Tree')),
-        meta: { title: '树状筛选列表页' },
+        meta: { title: 'Overview' },
       },
     ],
   },

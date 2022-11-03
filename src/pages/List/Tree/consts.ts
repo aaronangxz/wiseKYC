@@ -1,86 +1,125 @@
 export const treeList = [
   {
-    label: '深圳总部',
+    label: 'Asia',
     value: 0,
     children: [
       {
-        label: '总办',
-        value: '0-0',
+        label: 'Mainland China',
+        value: '0-1',
+      
       },
       {
-        label: '市场部',
-        value: '0-1',
+        label: 'East Asia',
+        value: '0-2',
         children: [
           {
-            label: '采购1组',
-            value: '0-1-0',
+            label: 'Japan',
+            value: '0-2-0',
           },
           {
-            label: '采购2组',
-            value: '0-1-1',
+            label: 'Korea',
+            value: '0-2-1',
           },
         ],
       },
       {
-        label: '技术部',
+        label: 'South East Asia',
+        value: '0-3',
+        children: [
+          {
+            label: 'Singapore',
+            value: '0-3-0',
+          },
+          {
+            label: 'Malaysia',
+            value: '0-3-1',
+          },
+        ],
+      },
+      {
+        label: 'North Asia',
+        value: '0-4',
+        children: [
+          {
+            label: 'Russia',
+            value: '0-4-0',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Europe',
+    value: 1,
+    children: [
+      {
+        label: 'United Kingdom',
+        value: '0-1',
+      },
+      {
+        label: 'Switzerland',
         value: '0-2',
       },
     ],
   },
   {
-    label: '北京总部',
-    value: 1,
-    children: [
-      {
-        label: '总办',
-        value: '1-0',
-      },
-      {
-        label: '市场部',
-        value: '1-1',
-        children: [
-          {
-            label: '采购1组',
-            value: '1-1-0',
-          },
-          {
-            label: '采购2组',
-            value: '1-1-1',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    label: '上海总部',
+    label: 'South America',
     value: 2,
     children: [
       {
-        label: '市场部',
-        value: '2-0',
+        label: 'Brazil',
+        value: '1-0',
       },
       {
-        label: '财务部',
-        value: '2-1',
-        children: [
-          {
-            label: '财务1组',
-            value: '2-1-0',
-          },
-          {
-            label: '财务2组',
-            value: '2-1-1',
-          },
-        ],
+        label: 'Peru',
+        value: '1-1',
       },
     ],
   },
   {
-    label: '湖南',
+    label: 'North America',
     value: 3,
+    children: [
+      {
+        label: 'USA',
+        value: '3-0',
+      },
+      {
+        label: 'Canada',
+        value: '3-1',
+      },
+    ],
   },
   {
-    label: '湖北',
+    label: 'Ocenia',
     value: 4,
+    children: [
+      {
+        label: 'Australia',
+        value: '4-0',
+      },
+      {
+        label: 'New Zealand',
+        value: '4-1',
+      },
+      {
+        label: 'Fiji',
+        value: '4-2',
+      },
+    ],
+  },
+  {
+    label: 'Africa',
+    value: 5,
+    children: [
+      {
+        label: 'South Africa',
+        value: '5-0',
+      },
+      {
+        label: 'Nigeria',
+        value: '5-1',
+      },
+    ],
   },
 ];

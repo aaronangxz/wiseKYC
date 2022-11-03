@@ -24,7 +24,7 @@ const Overview = (): React.ReactElement => {
     <div className={Style.overviewPanel}>
       <Row>
         <Col xs={12} xl={9} span={12}>
-          <Card title='  Overall Detections ' subtitle='(case)' actions={LastWeekDatePicker(onTimeChange)} bordered={false}>
+          <Card title='  Overall Detections ' subtitle='(case)' actions={LastWeekDatePicker(onTimeChange)} headerBordered>
             <ReactEcharts
               option={dynamicChartOption} // option：图表配置项
               notMerge={true}
@@ -34,11 +34,12 @@ const Overview = (): React.ReactElement => {
           </Card>
         </Col>
         <Col xs={12} xl={3} span={12}>
-          <Card actions={<Button>Export</Button>} bordered={false}>
+          <Card actions={<Button>Export</Button>} headerBordered>
             <Row>
-              <Col xl={12} xs={6} span={12}>
-                <Board
-                  title='本月出库总计（件）'
+              <Col xl={12} xs={6} span={12} >
+                <Board 
+                  title='High Risk'
+                  
                   count='1726'
                   trend={ETrend.down}
                   trendNum='20.3%'
@@ -48,7 +49,7 @@ const Overview = (): React.ReactElement => {
               </Col>
               <Col xl={12} xs={6} span={12}>
                 <Board
-                  title='活跃用户（个）'
+                  title='Medium Risk'
                   count='1126'
                   trend={ETrend.down}
                   trendNum='20.5%'

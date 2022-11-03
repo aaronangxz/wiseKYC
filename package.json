@@ -1,11 +1,11 @@
 {
-  "name": "Wise KYC",
-  "homepage":"http://aaronangxz.github.io/wiseKYC",
+  "name": "WiseKYC",
+  "homepage": "http://aaronangxz.github.io/wiseKYC/",
   "version": "0.1.5",
   "private": true,
   "scripts": {
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev:mock": "vite --open --mode mock",
     "dev": "vite --open --mode development",
     "dev:linux": "vite --mode development",
