@@ -91,6 +91,7 @@ const BottomTable = () => {
   return (
     <>
       <Card title='Machine Learning Models' headerBordered>
+      <ManagementPopup visible={true} />
         <Table
           columns={getTableColumns(TABLE_COLUMNS)}
           rowKey='index'

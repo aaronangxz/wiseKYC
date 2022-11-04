@@ -25,6 +25,11 @@ const result: IRouter[] = [
         Component: lazy(() => import('pages/Detail/Secondary')),
         meta: { title: 'Audit Log' },
       },
+      {
+        path: 'card',
+        Component: lazy(() => import('pages/List/Card')),
+        meta: { title: 'Algorithms' },
+      },
     ],
   },
 ];
