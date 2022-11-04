@@ -69,6 +69,12 @@ npm run build
 npm run build:test
 ```
 
+### GH Pages
+
+```bash
+git add dist && git commit -m "Initial dist subtree commit"
+git subtree push --prefix dist origin gh-pages
+```
 
 ### Contributing Guide
 
