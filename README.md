@@ -69,7 +69,7 @@ npm run build
 npm run build:test
 ```
 
-### GH Pages
+### Git Hub Pages
 
 ```bash
 git add dist && git commit -m "Initial dist subtree commit"
