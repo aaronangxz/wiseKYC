@@ -6,23 +6,23 @@ const { Option } = Select;
 
 const addressOptions = [
   {
-    label: '广东省深圳市南山区',
+    label: 'me@wisenance.com',
     value: '0',
   },
   {
-    label: '北京市海淀区',
+    label: 'yuu@wisenance.com',
     value: '1',
   },
   {
-    label: '四川省成都市高新区',
+    label: 'heyy@wisenance.com',
     value: '2',
   },
   {
-    label: '广东省广州市天河区',
+    label: 'hoho@wisenance.com',
     value: '3',
   },
   {
-    label: '陕西省西安市高新区',
+    label: 'hehe@wisenance.com',
     value: '4',
   },
 ];
@@ -40,24 +40,24 @@ export default memo((props: { current: number; callback: Function; steps: any[] 
 
   return (
     <Form labelWidth={100}>
-      <FormItem label='收货人' name='receiver' rules={[{ required: true, message: '请输入收货人', type: 'error' }]}>
-        <Input placeholder='请输入收货人' />
+      <FormItem label='Dispute Item' name='receiver' rules={[{ required: true, message: '请输入收货人', type: 'error' }]}>
+        <Input placeholder='Dispute Item' />
       </FormItem>
 
       <FormItem
-        label='收货人手机号'
+        label='Dispute Data'
         name='receiverPhone'
         rules={[{ required: true, message: '请输入收货人手机号', type: 'error' }]}
       >
-        <Input placeholder='请输入收货人手机号号' />
+        <Input placeholder='Dispute Data' />
       </FormItem>
 
       <FormItem
-        label='收货地址'
+        label='Analyst'
         name='receiverAddress'
         rules={[{ required: true, message: '请选择收货地址', type: 'error' }]}
       >
-        <Select value='3' placeholder='请选择收货地址'>
+        <Select value='3' placeholder='Analyst'>
           {addressOptions.map((item: { label: string; value: string }) => {
             const { label, value } = item;
             return <Option key={value} label={label} value={value} />;
@@ -66,23 +66,22 @@ export default memo((props: { current: number; callback: Function; steps: any[] 
       </FormItem>
 
       <FormItem
-        label='详细地址'
+        label='Remarks'
         name='taxpayerId'
         rules={[{ required: true, message: '请输入详细地址', type: 'error' }]}
       >
-        <Textarea placeholder='请输入详细地址' value={'哈哈哈'} />
+        <Textarea placeholder='Remarks' value={'哈哈哈'} />
       </FormItem>
 
       <FormItem>
+      {current > 0 && (
+          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
+            上一步
+          </Button>
+        )}
         {current < steps.length - 1 && (
           <Button type='submit' onClick={() => next()}>
             下一步
-          </Button>
-        )}
-
-        {current > 0 && (
-          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-            上一步
           </Button>
         )}
       </FormItem>

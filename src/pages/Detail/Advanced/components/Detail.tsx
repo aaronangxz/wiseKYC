@@ -10,7 +10,7 @@ const Detail = () => (
       columns={[
         {
           align: 'left',
-          width: 300,
+          width: 150,
           ellipsis: true,
           colKey: 'number',
           title: 'Task ID',
@@ -51,14 +51,14 @@ const Detail = () => (
         },
         {
           align: 'left',
-          width: 200,
+          width: 150,
           ellipsis: true,
           colKey: 'department',
           title: 'Department',
         },
         {
           align: 'left',
-          width: 500,
+          width: 300,
           ellipsis: true,
           colKey: 'createtime',
           title: 'Time',

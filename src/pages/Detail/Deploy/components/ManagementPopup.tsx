@@ -14,7 +14,7 @@ const ManagementPopup = ({ visible }: IProps): React.ReactElement => {
 
   return (
     <Dialog
-      header='基本信息'
+      header='Canary Deployment'
       visible={isShow}
       onClose={handleConfirm}
       onConfirm={handleConfirm}

@@ -17,7 +17,7 @@ const nameSorter: SorterFun<TableRowData> = (a, b) => {
 
 export const TABLE_COLUMNS: TdPrimaryTableProps['columns'] = [
   {
-    width: '448',
+    width: '250',
     ellipsis: true,
     colKey: 'name',
     title: 'Model',
@@ -42,6 +42,47 @@ export const TABLE_COLUMNS: TdPrimaryTableProps['columns'] = [
     ellipsis: true,
     colKey: 'updateTime',
     title: 'Last Active',
+    sortType: 'all',
+    sorter: true,
+  },
+  {
+    align: 'left',
+    width: '200',
+    className: 'test2',
+    ellipsis: true,
+    colKey: 'op',
+    fixed: 'right',
+    title: 'Action',
+  },
+];
+
+export const TABLE_COLUMNS1: TdPrimaryTableProps['columns'] = [
+  {
+    width: '200',
+    ellipsis: true,
+    colKey: 'name',
+    title: 'Machine',
+    sortType: 'all',
+    sorter: nameSorter,
+  },
+  {
+    width: '224',
+    ellipsis: true,
+    colKey: 'adminName',
+    title: 'Cluster',
+  },
+  {
+    width: '224',
+    ellipsis: true,
+    colKey: 'telephone',
+    title: 'Status',
+  },
+  {
+    width: '224',
+    className: 'test',
+    ellipsis: true,
+    colKey: 'updateTime',
+    title: 'Last Deployment',
     sortType: 'all',
     sorter: true,
   },
@@ -123,11 +164,11 @@ export const POPUP_DATA = {
 
 export const BASE_INFO_DATA = [
   {
-    name: '集群名',
-    value: 'helloworld',
+    name: 'Cluster',
+    value: 'Asia - Singapore',
   },
   {
-    name: '集群ID',
+    name: 'Cluster ID',
     value: 'cls - 2ntelvxw',
     type: {
       key: 'color',
@@ -135,35 +176,35 @@ export const BASE_INFO_DATA = [
     },
   },
   {
-    name: '状态',
-    value: '运行中',
+    name: 'Status',
+    value: 'Deploying',
     type: {
       key: 'color',
       value: 'green',
     },
   },
   {
-    name: 'K8S版本',
+    name: 'Version',
     value: '1.7.8',
   },
   {
-    name: '配置',
-    value: '6.73 核 10.30 GB',
+    name: 'Configuration',
+    value: '32 Cores 192 GB',
   },
   {
-    name: '所在地域',
-    value: '广州',
+    name: 'Location',
+    value: 'Singapore',
   },
   {
-    name: '新增资源所属项目',
-    value: '默认项目',
+    name: 'Resource',
+    value: 'Default',
   },
   {
-    name: '节点数量',
-    value: '4 个',
+    name: 'Nodes',
+    value: '8',
   },
   {
-    name: '节点网络',
+    name: 'Network',
     value: 'vpc - 5frmkm1x',
     type: {
       key: 'color',
@@ -171,27 +212,27 @@ export const BASE_INFO_DATA = [
     },
   },
   {
-    name: '容器网络',
+    name: 'Host',
     value: '172.16.0.0 / 16',
   },
   {
-    name: '集群凭证',
-    value: '显示凭证',
+    name: 'Certificate',
+    value: 'View Certificate',
     type: {
       key: 'color',
       value: 'blue',
     },
   },
   {
-    name: '创建/更新',
-    value: '2018-05-31 22:11:44 2018-05-31 22:11:44',
+    name: 'Deploy Date',
+    value: '2022-11-08 22:11:44',
     type: {
       key: 'contractAnnex',
       value: 'pdf',
     },
   },
   {
-    name: '描述',
-    value: 'istio_test',
+    name: 'Descrption',
+    value: 'Regular Deployment 18',
   },
 ];

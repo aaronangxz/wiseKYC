@@ -28,14 +28,14 @@ export default memo((props: { callback: Function }) => {
         }}
       >
         <CheckCircleFilledIcon className={Style.icon} />
-        <div className={Style.title}>完成开票申请</div>
-        <p>预计1～3个工作日会将电子发票发至邮箱，发票邮寄请耐心等待</p>
+        <div className={Style.title}>Dispute Submitted</div>
+        <p>Ticket will be processed within 24 hours.</p>
         <div className='tdesign-demo-block-column' style={{ marginTop: '20px' }}>
           <Button theme='primary' variant='base' onClick={onClickAgain}>
-            再次申请
+            Apply Again
           </Button>
           <Button theme='default' variant='base' style={{ marginLeft: '15px' }} onClick={onCheck}>
-            查看进度
+            View Progress
           </Button>
         </div>
       </div>

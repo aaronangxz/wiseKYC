@@ -18,7 +18,7 @@ const result: IRouter[] = [
       {
         path: 'deploy',
         Component: lazy(() => import('pages/Detail/Deploy')),
-        meta: { title: 'Insights' },
+        meta: { title: 'System Monitoring' },
       },
       {
         path: 'secondary',

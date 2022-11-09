@@ -32,7 +32,7 @@ const MiddleChart = () => {
     <Row gutter={[16, 16]} className={Style.middleChartPanel}>
       <Col xs={12} xl={9}>
         <Card title='Application Rate' subtitle='(per day)' headerBordered actions={LastWeekDatePicker(onTimeChange)}>
-          <ReactEcharts option={dynamicLineChartOption} notMerge={true} lazyUpdate={false} />
+          <ReactEcharts option={dynamicLineChartOption} notMerge={true} lazyUpdate={true} />
         </Card>
       </Col>
       <Col xs={12} xl={3}>

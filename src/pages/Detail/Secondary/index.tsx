@@ -37,18 +37,18 @@ const MsgList = memo((props: IMsgListProps) => {
                 <Row gutter={8}>
                   <Col>
                     {item.status === 1 && (
-                      <Popup trigger='hover' showArrow content='设为已读'>
+                      <Popup trigger='hover' showArrow content='Mark as Read'>
                         <AddRectangleIcon onClick={() => onUpdate(item, 2)} />
                       </Popup>
                     )}
                     {item.status === 2 && (
-                      <Popup trigger='hover' showArrow content='设为未读'>
+                      <Popup trigger='hover' showArrow content='Mark as Unread'>
                         <ChatIcon onClick={() => onUpdate(item, 1)} />
                       </Popup>
                     )}
                   </Col>
                   <Col>
-                    <Popup trigger='hover' showArrow content='删除通知'>
+                    <Popup trigger='hover' showArrow content='Delete'>
                       <DeleteIcon onClick={() => onDelete(item)} />
                     </Popup>
                   </Col>
