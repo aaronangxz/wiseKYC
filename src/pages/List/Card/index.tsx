@@ -10,12 +10,36 @@ import { IProduct } from 'services/product';
 
 export const daat:IProduct[] = [
   {
-    name:"dd",
-    banner: "string",
-    description: "string",
+    name:"Profiling & Segmentation",
+    banner: "",
+    description: "Perform profilling and segmentation using k-means.",
     index: 0,
-    isSetup: false,
-    type: 2,
+    isSetup: true,
+    type: 1,
+  },
+  {
+    name:"Risk Scoring",
+    banner: "",
+    description: "Compute risk scores.",
+    index: 0,
+    isSetup: true,
+    type: 1,
+  },
+  {
+    name:"Screening & Analysis",
+    banner: "",
+    description: "Analyze user information.",
+    index: 0,
+    isSetup: true,
+    type: 1,
+  },
+  {
+    name:"Pattern Detection",
+    banner: "",
+    description: "Detects anormality from data",
+    index: 0,
+    isSetup: true,
+    type: 1,
   },]
 
 const CardList = () => {
@@ -60,19 +84,19 @@ const CardList = () => {
   return (
     <div>
       <div className={Style.toolBar}>
-        <Button>新建产品</Button>
-        <Input className={Style.search} suffixIcon={<SearchIcon />} placeholder='请输入你需要搜索的内容' />
+        <Button>Add Algorithm</Button>
+        <Input className={Style.search} suffixIcon={<SearchIcon />} placeholder='Search for an algorithm' />
       </div>
       {pageState.pageLoading ? (
         <div className={Style.loading}>
-          <Loading text='加载数据中...' loading size='large' />
+          <Loading text='Loading...' loading size='large' />
         </div>
       ) : (
         <>
           <div className={Style.cardList}>
             <Row gutter={[16, 12]}>
               {daat.map((product, index) => (
-                <Col key={index} span={6} lg={4}>
+                <Col key={index} span={6} lg={3}>
                   <ProductCard product={product} />
                 </Col>
               ))}
@@ -80,7 +104,7 @@ const CardList = () => {
           </div>
           <Pagination
             className={Style.pagination}
-            total={pageState.total}
+            total={1}
             pageSizeOptions={[12, 24, 36]}
             pageSize={pageState.pageSize}
             onChange={onChange}

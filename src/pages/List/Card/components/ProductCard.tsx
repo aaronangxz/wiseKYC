@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Avatar, Tag, Dropdown, Button } from 'tdesign-react';
-import { UserAvatarIcon, CalendarIcon, LaptopIcon, ShopIcon, ServiceIcon, Icon } from 'tdesign-icons-react';
+import { UserAvatarIcon, CalendarIcon, LaptopIcon, ShopIcon, ServiceIcon, Icon,DashboardIcon } from 'tdesign-icons-react';
 import { IProduct } from 'services/product';
 import Style from './ProductCard.module.less';
 
@@ -8,23 +8,23 @@ const { Group: AvatarGroup } = Avatar;
 const icons = [UserAvatarIcon, CalendarIcon, LaptopIcon, ShopIcon, ServiceIcon];
 
 const CardIcon = React.memo(() => {
-  const random = Math.floor(Math.random() * icons.length);
-  const Icon = icons[random];
+  // const random = Math.floor(Math.random() * icons.length);
+  const Icon = DashboardIcon;
   return <Icon />;
 });
 
 const ProductCard = ({ product }: { product: IProduct }) => {
   const disabled = !product.isSetup;
   return (
-    <Card
+    <Card headerBordered
       className={Style.panel}
       actions={
         disabled ? (
           <Tag theme='default' disabled={true}>
-            已停用
+            Inactive
           </Tag>
         ) : (
-          <Tag theme='success'>已启用</Tag>
+          <Tag theme='success'>Active</Tag>
         )
       }
       avatar={
@@ -42,11 +42,11 @@ const ProductCard = ({ product }: { product: IProduct }) => {
             trigger={'click'}
             options={[
               {
-                content: '管理',
+                content: 'Manage',
                 value: 1,
               },
               {
-                content: '删除',
+                content: 'Delete',
                 value: 2,
               },
             ]}
