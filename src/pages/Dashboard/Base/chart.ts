@@ -1,5 +1,5 @@
 import type { EChartOption } from 'echarts';
-import { getChartDataSet, ONE_WEEK_LIST } from 'utils/chart';
+import { getChartDataSet,getp99ChartDataSet, ONE_WEEK_LIST } from 'utils/chart';
 
 export const getLineChartOptions = (dateTime: Array<string> = []): EChartOption => {
   const [timeArray, inArray, outArray] = getChartDataSet(dateTime);
@@ -65,6 +65,62 @@ export const getLineChartOptions = (dateTime: Array<string> = []): EChartOption 
           borderWidth: 1,
         },
       },
+    ],
+  };
+};
+
+export const getp99LineChartOptions = (dateTime: Array<string> = []): EChartOption => {
+  const [timeArray, inArray, outArray] = getp99ChartDataSet(dateTime);
+  return {
+    tooltip: {
+      trigger: 'item',
+    },
+    grid: {
+      left: '0',
+      right: '20px',
+      top: '5px',
+      bottom: '36px',
+      containLabel: true,
+    },
+    legend: {
+      left: 'center',
+      bottom: '0',
+      orient: 'horizontal', // legend 横向布局。
+      data: ['This Month'],
+      textStyle: {
+        fontSize: 12,
+      },
+    },
+    xAxis: {
+      type: 'category',
+      data: timeArray,
+      boundaryGap: false,
+      axisLine: {
+        lineStyle: {
+          color: '#E3E6EB',
+          width: 1,
+        },
+      },
+    },
+    yAxis: {
+      type: 'value',
+    },
+    series: [
+      {
+        name: 'This Month',
+        data: outArray,
+        type: 'line',
+        smooth: false,
+        showSymbol: true,
+        symbol: 'circle',
+        symbolSize: 8,
+        itemStyle: {
+          borderWidth: 1,
+        },
+        areaStyle: {
+          color: '#0053D92F',
+        },
+      }
     ],
   };
 };

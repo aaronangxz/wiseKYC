@@ -43,12 +43,12 @@ export default memo((props: { current: number; callback: Function; steps: any[] 
       <FormItem>
       {current > 0 && (
           <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-            上一步
+            Previous Step
           </Button>
         )}
         {current < steps.length - 1 && (
           <Button type='submit' onClick={() => next()}>
-            下一步
+            Next Step
           </Button>
         )}
       </FormItem>

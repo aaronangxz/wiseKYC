@@ -36,3 +36,29 @@ export const getChartDataSet = (dateTime: Array<string> = [], divideNum = 10): C
 
   return [timeArray, inArray, outArray];
 };
+
+export function getp99TimeArray(dateTime: string[] = [], divideNum = 500, format = 'MM-DD'): string[] {
+  const timeArray = [];
+  if (dateTime.length === 0) {
+    dateTime.push(...RECENT_7_DAYS.map((item) => item.format(format)));
+  }
+  for (let i = 0; i < divideNum; i++) {
+    const dateAbsTime: number = (new Date(dateTime[1]).getTime() - new Date(dateTime[0]).getTime()) / divideNum;
+    const timeNode: number = new Date(dateTime[0]).getTime() + dateAbsTime * i;
+    timeArray.push(dayjs(timeNode).format(format));
+  }
+
+  return timeArray;
+}
+
+export const getp99ChartDataSet = (dateTime: Array<string> = [], divideNum = 500): ChartValue[][] => {
+  const timeArray = getp99TimeArray(dateTime, divideNum);
+  const inArray = [];
+  const outArray = [];
+  for (let index = 0; index < divideNum; index++) {
+    inArray.push(getRandomInt().toString());
+    outArray.push(getRandomInt().toString());
+  }
+
+  return [timeArray, inArray, outArray];
+};
